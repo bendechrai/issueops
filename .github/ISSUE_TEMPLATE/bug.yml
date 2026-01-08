@@ -1,0 +1,79 @@
+name: 🐛 Bug Report
+description: Report something that's not working correctly
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: What's happening now?
+      placeholder: When I click the save button, nothing happens.
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: Expected Behavior
+      description: What should happen instead?
+      placeholder: The task should be saved and appear in my list.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps-to-reproduce
+    attributes:
+      label: Steps to Reproduce
+      description: How can we see this bug?
+      placeholder: |
+        1. Go to the tasks page
+        2. Click "Add Task"
+        3. Enter a task name
+        4. Click "Save"
+        5. Nothing happens
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know the bug is fixed?
+      placeholder: |
+        - [ ] Clicking save creates the task
+        - [ ] Task appears in the list immediately
+        - [ ] Success message is shown
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-requirements
+    attributes:
+      label: Test Requirements
+      description: What tests should prevent this bug from returning?
+      placeholder: |
+        - Test that save button triggers create action
+        - Test that new task appears in list after save
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Low - Cosmetic or minor inconvenience
+        - Medium - Feature impaired but workaround exists
+        - High - Feature broken, no workaround
+        - Critical - App unusable or data loss
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional Context
+      description: Browser, device, error messages, screenshots, etc.
+    validations:
+      required: false

@@ -1,0 +1,67 @@
+name: ✨ Feature Request
+description: Request a new feature or enhancement
+title: "[Feature] "
+labels: ["feature"]
+body:
+  - type: textarea
+    id: user-story
+    attributes:
+      label: User Story
+      description: Describe the feature from a user's perspective
+      placeholder: |
+        As a [type of user], I want [some goal] so that [some reason].
+        
+        Example: As a user, I want to filter tasks by due date so that I can focus on what's urgent.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know when this feature is complete?
+      placeholder: |
+        - [ ] User can do X
+        - [ ] System displays Y when Z happens
+        - [ ] Error message shown if invalid input
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-requirements
+    attributes:
+      label: Test Requirements
+      description: What tests should prove this works?
+      placeholder: |
+        - Unit test for the filter logic
+        - E2E test for the filter UI interaction
+    validations:
+      required: true
+
+  - type: textarea
+    id: out-of-scope
+    attributes:
+      label: Out of Scope
+      description: What is explicitly NOT part of this feature?
+      placeholder: |
+        - Advanced sorting options (separate issue)
+        - Saved filters (separate issue)
+    validations:
+      required: false
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any other context, mockups, or references
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: size-check
+    attributes:
+      label: Size Check
+      description: Features should be small and focused
+      options:
+        - label: This feature can be implemented in ~300 lines or less
+          required: true

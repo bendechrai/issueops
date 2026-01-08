@@ -1,0 +1,169 @@
+# ============================================
+# DEPENDENCIES
+# ============================================
+
+# JavaScript/Node
+node_modules/
+.pnpm-store/
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+*.egg-info/
+.eggs/
+dist/
+
+# Ruby
+vendor/bundle/
+.bundle/
+
+# Go
+vendor/
+
+# Rust
+target/
+
+# PHP
+vendor/
+
+# .NET
+packages/
+
+# Elixir
+deps/
+_build/
+
+# ============================================
+# BUILD OUTPUTS
+# ============================================
+
+# General
+build/
+dist/
+out/
+bin/
+obj/
+
+# JavaScript
+.next/
+.nuxt/
+.output/
+.vercel/
+.netlify/
+
+# Rust
+target/
+
+# Go
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Java
+*.class
+*.jar
+*.war
+
+# ============================================
+# IDE & EDITORS
+# ============================================
+
+# JetBrains
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.netrwhist
+
+# Emacs
+*~
+\#*\#
+.#*
+
+# Sublime
+*.sublime-workspace
+*.sublime-project
+
+# ============================================
+# OPERATING SYSTEMS
+# ============================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# ============================================
+# ENVIRONMENT & SECRETS
+# ============================================
+
+.env
+.env.local
+.env.*.local
+.env.development
+.env.test
+.env.production
+*.pem
+*.key
+.secrets/
+
+# ============================================
+# LOGS & DEBUGGING
+# ============================================
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================
+# TESTING & COVERAGE
+# ============================================
+
+coverage/
+.nyc_output/
+htmlcov/
+.coverage
+.pytest_cache/
+.tox/
+
+# ============================================
+# MISCELLANEOUS
+# ============================================
+
+*.bak
+*.tmp
+*.temp
+.cache/
+.parcel-cache/
+.turbo/

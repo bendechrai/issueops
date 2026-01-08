@@ -1,0 +1,77 @@
+name: 📐 Architecture Decision
+description: Propose or request a technical decision (ADR)
+title: "[ADR] "
+labels: ["adr"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Architecture Decision Records (ADRs) document important technical choices.
+        Use this template when you need to make a decision about technology, patterns, or structure.
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: What situation requires a decision? What problem are we solving?
+      placeholder: |
+        We need to choose a database for the application. The app will store user tasks
+        with metadata like due dates, tags, and completion status.
+    validations:
+      required: true
+
+  - type: textarea
+    id: options
+    attributes:
+      label: Options Considered
+      description: What alternatives exist? List at least 2-3 options with pros/cons.
+      placeholder: |
+        **Option 1: PostgreSQL**
+        - Pros: Robust, well-supported, good for relational data
+        - Cons: Requires separate hosting
+        
+        **Option 2: SQLite**
+        - Pros: Simple, no separate server needed
+        - Cons: Not ideal for concurrent access
+        
+        **Option 3: MongoDB**
+        - Pros: Flexible schema
+        - Cons: May be overkill for this use case
+    validations:
+      required: true
+
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: Which option do you prefer and why? (Claude will fill this if you're asking for advice)
+      placeholder: |
+        I recommend PostgreSQL because...
+        
+        Or leave blank and ask Claude to recommend.
+    validations:
+      required: false
+
+  - type: textarea
+    id: consequences
+    attributes:
+      label: Consequences
+      description: What are the implications of this decision?
+      placeholder: |
+        - We'll need to set up a PostgreSQL instance
+        - Schema migrations will be required
+        - Team will need to know SQL
+    validations:
+      required: false
+
+  - type: dropdown
+    id: urgency
+    attributes:
+      label: Urgency
+      description: How soon do we need to decide?
+      options:
+        - Low - Can discuss over time
+        - Medium - Blocking near-term work
+        - High - Blocking current work
+    validations:
+      required: true

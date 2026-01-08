@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ❓ Get Help with IssueOps
+    url: https://github.com/bendechrai/issueops/issues
+    about: Questions about the IssueOps framework itself? Open an issue in the template repo.

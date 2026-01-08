@@ -1,0 +1,108 @@
+name: 🚀 Project Kickoff
+description: Start a new project - describe what you want to build
+title: "[Kickoff] "
+labels: ["kickoff"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Welcome! Describe what you want to build and Claude will help you get started.
+        
+        Don't worry about technical details - just explain your idea in plain language.
+
+  - type: input
+    id: project-name
+    attributes:
+      label: Project Name
+      description: What do you want to call this project?
+      placeholder: "My Awesome App"
+    validations:
+      required: true
+
+  - type: textarea
+    id: project-description
+    attributes:
+      label: One-Line Description
+      description: Describe your project in one sentence (this will appear at the top of CLAUDE.md)
+      placeholder: "A simple todo app that helps busy people stay organized."
+    validations:
+      required: true
+
+  - type: textarea
+    id: what
+    attributes:
+      label: What do you want to build?
+      description: Describe your project idea in more detail. What problem does it solve? Who is it for?
+      placeholder: |
+        I want to build a todo list app that helps me track my daily tasks.
+        It should be simple and fast, and work on my phone and computer.
+        
+        The main problem I'm trying to solve is that I forget things easily
+        and existing apps are too complicated.
+    validations:
+      required: true
+
+  - type: textarea
+    id: features
+    attributes:
+      label: Key features
+      description: What are the most important things it should do? List 3-5 features.
+      placeholder: |
+        - Add and remove tasks
+        - Mark tasks as complete
+        - See all my tasks in a list
+        - Works on mobile and desktop
+    validations:
+      required: true
+
+  - type: textarea
+    id: inspiration
+    attributes:
+      label: Inspiration or examples
+      description: Are there similar apps or websites you like? What do you like about them?
+      placeholder: |
+        I like Todoist's simplicity but want something more minimal.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: timeline
+    attributes:
+      label: Timeline
+      description: How soon do you need this?
+      options:
+        - Just exploring / learning
+        - Side project, no rush
+        - Want to use it soon (weeks)
+        - Need it quickly (days)
+    validations:
+      required: true
+
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Any constraints or preferences?
+      description: |
+        Things like:
+        - Hosting preferences (free tier? specific provider?)
+        - Technologies you want to use or avoid
+        - Budget constraints
+        - Your technical experience level
+      placeholder: |
+        I'd like to host it for free if possible.
+        I don't know how to code but I'm willing to learn basics.
+    validations:
+      required: false
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        **What happens next?**
+        
+        After you submit this issue, comment `@claude Let's get started!` and Claude will:
+        1. Update CLAUDE.md with your project name and description
+        2. Ask any clarifying questions
+        3. Propose a technical approach for your approval
+        4. Start building once you approve!

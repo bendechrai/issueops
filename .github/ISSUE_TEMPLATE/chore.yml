@@ -1,0 +1,57 @@
+name: 🧹 Chore / Refactor
+description: Non-feature work - refactoring, cleanup, upgrades
+title: "[Chore] "
+labels: ["chore"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: What work needs to be done?
+      placeholder: |
+        Refactor the task list component to use the new design system.
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivation
+      description: Why is this work needed? What problem does it solve?
+      placeholder: |
+        The current code is hard to maintain and doesn't follow our new patterns.
+        This refactor will make it easier to add new features.
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: How do we know this is complete?
+      placeholder: |
+        - [ ] Component uses new design system
+        - [ ] All existing tests still pass
+        - [ ] No visual changes to the UI
+    validations:
+      required: true
+
+  - type: textarea
+    id: test-requirements
+    attributes:
+      label: Test Requirements
+      description: What tests should be added or updated?
+      placeholder: |
+        - Existing tests should continue to pass
+        - Add tests for any new helper functions
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-work Checklist
+      options:
+        - label: This change does NOT alter external behavior
+        - label: This can be done in ~300 lines or less
+        - label: I've checked this isn't already covered by another issue
