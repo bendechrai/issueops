@@ -102,6 +102,61 @@ Multiple branches from one issue = merge conflicts = humans touching code. We av
 2. Rebasing onto main when picking up work
 3. Claude resolving conflicts when possible
 
+## Handling Complex Tasks
+
+Some tasks (like project scaffolding) are too large for a single run. Claude has a turn limit of 50 and will time out on complex tasks.
+
+### Break Work Into Phases
+
+For complex tasks, Claude should:
+
+1. **Propose phases** - Break the work into phases that each take ~15-20 turns
+2. **Complete one phase** - Do the work, commit, push
+3. **Report progress** - Update the issue comment with what was done and what's next
+4. **Wait for continue** - Human says `@claude continue` to proceed with the next phase
+
+### Example Phases for Project Scaffolding
+
+Instead of doing everything at once:
+
+**Phase 1: Project initialization**
+- Create Next.js project
+- Basic TypeScript config
+- Commit and push
+
+**Phase 2: Database setup**
+- Install and configure Prisma
+- Create initial schema
+- Commit and push
+
+**Phase 3: Testing infrastructure**
+- Set up Vitest
+- Set up Playwright
+- Add example tests
+- Commit and push
+
+**Phase 4: Component library**
+- Install shadcn/ui
+- Configure components
+- Commit and push
+
+### Commands to Use
+
+When running shell commands:
+- **Use simple, single commands** - Don't chain with `&&`
+- **Run one tool at a time** - Easier to debug if something fails
+- **Check versions first** - Verify tools are available before using them
+
+```bash
+# Good - simple commands
+node --version
+npm init -y
+npm install next
+
+# Avoid - chained commands may fail silently
+node --version && npm init -y && npm install next
+```
+
 ## Issue Rules
 
 - **One concern per issue** - If it has "and" in the title, split it
@@ -146,10 +201,11 @@ project/
 5. **Recommend, don't decide** - Post your recommendation and wait for approval on ADRs
 6. **One branch per issue** - Use `claude/issue-{number}`, rebase onto main before starting
 7. **Rebase and resolve conflicts** - Don't ask humans to resolve conflicts unless truly stuck
-8. **Write tests first** - TDD preferred
-9. **Small commits** - Atomic, reviewable changes
-10. **Always create PRs** - Use `gh pr create` to actually create PRs, not just provide links
-11. **Update existing PRs** - Push to the same branch; don't create new PRs for the same issue
+8. **Break complex tasks into phases** - Complete one phase, commit, then continue
+9. **Write tests first** - TDD preferred
+10. **Small commits** - Atomic, reviewable changes
+11. **Always create PRs** - Use `gh pr create` to actually create PRs, not just provide links
+12. **Update existing PRs** - Push to the same branch; don't create new PRs for the same issue
 
 ## For Humans: How to Guide This Project
 
@@ -160,3 +216,4 @@ project/
 5. **Review PRs** - Look at what Claude built before merging
 6. **Merge PRs yourself** - Claude cannot merge (security restriction)
 7. **Trust but verify** - Tests and CI are your safety net
+8. **Say `@claude continue`** - To resume work on complex multi-phase tasks

@@ -75,9 +75,25 @@ Yes, but each issue gets its own branch. Claude can context-switch between issue
 
 The default is 50 turns. If Claude hits this limit:
 
-1. **Break down the task** - The issue might be too big. Split it into smaller issues.
-2. **Increase the limit** - Edit `.github/workflows/claude.yml` and change `--max-turns 50` to a higher number
-3. **Continue the work** - Comment `@claude Continue where you left off` to start a new run
+1. **Continue the work** - Comment `@claude continue` to resume where Claude left off
+2. **Check the progress** - Claude should have committed partial work to the branch
+3. **Repeat as needed** - Complex tasks may need multiple `@claude continue` cycles
+
+For very complex tasks like project scaffolding, Claude should automatically break work into phases. If it doesn't, you can ask: `@claude Break this into phases and complete the first phase.`
+
+### How do I handle project scaffolding?
+
+Scaffolding a full project (framework + database + testing + components) is too much for one run. Claude should:
+
+1. Propose phases in its comment
+2. Complete phase 1, commit, and push
+3. Report what was done and what's next
+4. Wait for you to say `@claude continue`
+
+If Claude tries to do everything at once and times out, comment:
+```
+@claude Let's take this in phases. Complete just the Next.js initialization first, commit, then stop and tell me what's next.
+```
 
 ### How much does each run cost?
 
