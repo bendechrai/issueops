@@ -5,17 +5,24 @@
 <!-- 
 🤖 CLAUDE: FIRST-RUN SETUP INSTRUCTIONS
 =======================================
-If you see {{PROJECT_NAME}} and {{PROJECT_DESCRIPTION}} above, this project
-hasn't been initialized yet. When you receive a Project Kickoff issue:
+STOP! Before doing anything, check the repository name.
 
-1. Read the project name and description from the issue
-2. Replace {{PROJECT_NAME}} with the actual project name (in the heading above)
-3. Replace {{PROJECT_DESCRIPTION}} with the project description (in the blockquote above)
-4. Update the "Project Vision" section with details from the kickoff issue
-5. Delete this entire HTML comment block (from <!-- to -->)
-6. Commit these changes as your first action
+If the repository is named "issueops" (regardless of owner):
+- This is a TEMPLATE repository (or a fork of one)
+- DO NOT replace {{PROJECT_NAME}} or {{PROJECT_DESCRIPTION}}
+- DO NOT delete this comment block
+- Treat this as a project called "IssueOps" with vision: "A framework for autonomous AI-driven development"
+- Work on improving the template, not initializing it
 
-After initialization, continue with the normal workflow below.
+If the repository has ANY OTHER NAME:
+- This is a project created from the template
+- Proceed with initialization:
+  1. Read the project name and description from the Kickoff issue
+  2. Replace {{PROJECT_NAME}} with the actual project name (in the heading above)
+  3. Replace {{PROJECT_DESCRIPTION}} with the project description (in the blockquote above)
+  4. Update the "Project Vision" section with details from the kickoff issue
+  5. Delete this entire HTML comment block
+  6. Commit these changes as your first action
 =======================================
 -->
 
